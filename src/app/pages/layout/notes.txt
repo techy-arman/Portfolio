@@ -1,0 +1,348 @@
+<?php
+/**
+ * The header for Astra Theme.
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Astra
+ * @since 1.0.0
+ */
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
+?>
+<!DOCTYPE html>
+<?php astra_html_before(); ?>
+<html <?php language_attributes(); ?>>
+
+<head>
+    <?php astra_head_top(); ?>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php
+    if (apply_filters('astra_header_profile_gmpg_link', true)) {
+        ?>
+        <link rel="profile" href="https://gmpg.org/xfn/11">
+        <?php
+    }
+    ?>
+
+    <!-- Internal CSS -->
+    <style>
+		#menu-header-menu{
+			margin:0px;
+			padding-right:20px;
+		}
+        /* Custom Styles */
+
+        .headDsMain {
+/*             background-color: #807a9e; */
+            width: 100%;
+        }
+/* 
+        .container {
+            width: 90%;
+            margin: auto;
+        } */
+
+        html {
+            margin-top: 0px !important;
+        }
+
+        .navLogo {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .navbarDs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        #menu-header-menu>li,
+        .myCustomNavbar>li {
+            display: inline;
+            padding: 0px 18px;
+        }
+
+        #menu-header-menu>li>a,
+        .myCustomNavbar>li>a {
+            text-decoration: none;
+            font-family: Poppins;
+            font-size: 16px;
+            position: relative;
+        }
+
+        #menu-header-menu>li>a {
+            color: #000;
+        }
+
+        .myCustomNavbar>li>a {
+            color: #000 !important;
+        }
+
+        .registerBtn,
+        .BtnRegister {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 32px;
+            border-radius: 8px;
+            font-family: Poppins;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .registerBtn {
+            background-color: white;
+            color: #807a9e;
+            border: none;
+			line-height:1.2;
+			padding:8px 16px;
+			transition-duration:0.5s;
+        }
+
+        .BtnRegister {
+            background-color: #fff;
+            color: #807a9e;
+            border: none;
+        }
+
+        .toggleNavDs {
+            display: none;
+        }
+
+        .toggleNavDs span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            display: block;
+            margin: 5px 0;
+            transition: 0.5s;
+            border-radius: 5px;
+        }
+
+        .navActDs>span:nth-child(1) {
+            transform: rotate(45deg);
+            margin-top: 14px;
+        }
+
+        .navActDs>span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navActDs>span:nth-child(3) {
+            transform: rotate(-45deg);
+            margin-top: -16px;
+        }
+
+        .navList {
+            transition: 0.5s ease-in-out;
+			display:flex;
+        }
+		.navBtns{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+		}
+		.menu-header-menu-container{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+}
+        .navMenuActDs,
+        .navBtnActDs {
+            display: flex !important;
+			flex-direction:column;
+			width:100%;
+			align-items:center;
+        }
+
+        .navBtnActDs {
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            padding-bottom: 20px !important;
+        }
+
+        .current-menu-item>a {
+            border-bottom: 2px solid white;
+            padding-bottom: 3px;
+        }
+
+        #menu-header-menu>li>a::after,
+        .myCustomNavbar>li>a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 0.1rem;
+            background-color: currentColor;
+            bottom: -2px;
+            left: 0;
+            transform: scale(0, 1);
+            transform-origin: 0% 100%;
+            transition: transform 0.2s ease;
+        }
+
+        #menu-header-menu>li>a:hover::after,
+        .myCustomNavbar>li>a:hover::after {
+            transform: scale(1, 1);
+        }
+
+        @media (max-width: 992px) {
+            .navLogo {
+                width: 100%;
+            }
+
+            .toggleNavDs {
+                display: block;
+                padding-top: 10px;
+            }
+
+            .navbarDs {
+                flex-direction: column;
+                align-items: start !important;
+                justify-content: start !important;
+            }
+
+            #menu-header-menu>li,
+            .myCustomNavbar>li {
+                display: flex;
+                width: 100%;
+                padding: 6px 0;
+            }
+
+            #menu-header-menu>li>a,
+            .myCustomNavbar>li>a {
+                font-size: 22px;
+                padding-top: 6px;
+                margin-left: 20px;
+                background-color: #000;
+            }
+
+            #menu-header-menu,
+            .myCustomNavbar,
+            .menu {
+                flex-direction: column;
+                justify-content: start;
+                align-items: start !important;
+                margin: 0;
+                padding: 30px 0;
+            }
+
+            .navList,
+            .navBtns {
+                display: none;
+            }
+
+            .registerBtn,
+            .BtnRegister {
+                padding: 14px 50px;
+            }
+
+            .navBtns {
+                padding-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 430px) {
+
+            #menu-header-menu>li,
+            .myCustomNavbar>li {
+                display: flex;
+                width: 100%;
+                padding: 6px 0;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .navBtns {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 20px;
+                background-color: #249115;
+            }
+        }
+    </style>
+
+</head>
+
+<body <?php astra_schema_body(); ?> <?php body_class(); ?>>
+    <!-- <?php astra_body_top(); ?> -->
+    <!-- <?php wp_body_open(); ?> -->
+
+    <a class="skip-link screen-reader-text" href="#content" role="link"
+        title="<?php echo esc_attr(astra_default_strings('string-header-skip-link', false)); ?>">
+        <?php echo esc_html(astra_default_strings('string-header-skip-link', false)); ?>
+    </a>
+
+    <div <?php
+    echo astra_attr(
+        'site',
+        array(
+            'id' => 'page',
+            'class' => 'hfeed site',
+        )
+    );
+    ?>>
+        <?php
+        astra_header_before();
+
+        astra_header();
+
+        astra_header_after();
+
+        astra_content_before();
+        ?>
+        <div id="content" class="site-content">
+            <div class="ast-container">
+                <?php astra_content_top(); ?>
+                <section class="headDsMain">
+                    <div class="container">
+                        <div class="navbarDs">
+                            <div class="navLogo">
+                                <div class="navLogImg">
+                                    <a href="/"><img src="/wp-content/uploads/2024/10/Logo.png" alt="logo"></a>
+                                </div>
+                                <div class="toggleNavDs" onclick='onClickMenu()'>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="navList">
+                                <?php wp_nav_menu(array('theme_location' => 'header-menu-Rp')); ?> 
+                            </div>
+                            <div class="navBtns">
+                                <button class="registerBtn">Get </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Internal JavaScript -->
+        <script>
+            function onClickMenu() {
+                document.querySelector('.toggleNavDs').classList.toggle('navActDs');
+                document.querySelector('.navList').classList.toggle('navMenuActDs');
+                document.querySelector('.navBtns').classList.toggle('navBtnActDs');
+            };
+        </script>
+
+</body>
+
+</html>
