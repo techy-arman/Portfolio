@@ -1,0 +1,14 @@
+ul>li>a{
+    padding: 10px 20px;
+    /* transition: 0.2s ease-in-out; */
+    &:hover{
+        color: #C22341;
+        border: 1px solid #C22341;
+        border-radius: 10px;
+    }
+}
+ul > li > a:active {
+    color: #C22341 !important;
+    border: 1px solid #C22341 !important;
+    border-radius: 10px !important;
+}
