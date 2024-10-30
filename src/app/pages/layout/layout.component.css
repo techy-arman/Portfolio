@@ -13,3 +13,11 @@ ul > li > a:active {
     border: 1px solid #C22341 !important;
     border-radius: 10px !important;
 }
+.toggleClass{
+    display: none;
+}
+@media (max-width:993px){
+    .toggleClass{
+        display: block;
+    }
+}
