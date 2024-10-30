@@ -327,3 +327,11 @@ footer p a:hover {
     font-size: 6rem;
   }
 }
+#skill-list p span,.btn{
+  transition: 0.2s;
+  border: 1px solid #fff;
+  cursor: pointer;
+  &:hover{
+    scale: 1.15;
+  }
+}

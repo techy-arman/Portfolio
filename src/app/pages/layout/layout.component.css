@@ -1,5 +1,6 @@
 ul>li>a{
     padding: 10px 20px;
+    color: #fff;
     /* transition: 0.2s ease-in-out; */
     &:hover{
         color: #C22341;
